@@ -1,0 +1,24 @@
+[
+  {
+    "letter": "a",
+    "url": "audur",
+    "name": "Auður Benediktsdóttir ",
+    "nameDeflected": "Viðreisnar",
+    "website": "",
+    "leader": "",
+    "leaderTitle": "Er systir Ásdísar",
+    "reply": "22254535224424311511421445",
+    "color": "#EE9730"
+  },
+  {
+    "letter": "á",
+    "url": "asdis",
+    "name": "Ásdís Benediktsdóttir",
+    "nameDeflected": "Vinstri Grænna",
+    "website": "",
+    "leader": "",
+    "leaderTitle": "Er systir Auðar",
+    "reply": "55433343551135544144245222",
+    "color": "#60A749"
+  }
+]

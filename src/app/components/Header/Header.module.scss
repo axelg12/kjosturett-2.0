@@ -1,0 +1,251 @@
+@import '../functions.scss';
+@import '../variables.scss';
+
+.root {
+  background: #fff;
+  backdrop-filter: blur(5px);
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: background-color 300ms, box-shadow 250ms, transform 250ms;
+  width: 100%;
+  z-index: 10;
+
+  &.isOpen {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: none;
+  }
+}
+
+.hamburgerBtn,
+.leftWrap,
+.links {
+  transition: transform 250ms;
+}
+
+.countdown {
+  transition: opacity 250ms;
+}
+
+.fake,
+.wrap {
+  @include between-property('height', 120px, 80px, 1200px, 768px);
+}
+
+.sticky {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  transform: translateY(-30px);
+
+  .countdown {
+    opacity: 0;
+  }
+
+  .leftWrap {
+    transform: translateY(20px);
+  }
+
+  .hamburgerBtn,
+  .links {
+    transform: translateY(15px);
+  }
+
+  @media (min-width: 1200px) {
+    transform: translateY(-60px);
+
+    .countdown {
+      opacity: 0;
+    }
+
+    .leftWrap {
+      transform: translateY(35px);
+    }
+
+    .links {
+      transform: translateY(30px);
+    }
+  }
+}
+
+.desktopNav .links {
+  display: none;
+
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+.mobileNav {
+  align-items: center;
+  background: rgba(#fff, 0.9);
+  backdrop-filter: blur(5px);
+  display: flex;
+  bottom: -30px;
+  flex-direction: column;
+  left: 0;
+  justify-content: center;
+  pointer-events: none;
+  position: fixed;
+  transition: transform 400ms ease-in-out;
+  transform: translateY(-140%);
+  width: 100%;
+  z-index: 9;
+
+  &.isOpen {
+    pointer-events: auto;
+    transform: none;
+  }
+
+  &.sticky.isOpen {
+    transform: translateY(-30px);
+  }
+
+  .links {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  .links a {
+    background-position: 0 calc(1.7em);
+    font-size: 2rem;
+    margin: 0 auto;
+    display: table;
+    padding: 0.3em 0;
+  }
+
+  @include between-property('top', 120px, 80px, 1200px, 768px);
+}
+
+.hamburgerBtn {
+  border: none;
+  background: transparent;
+  appearance: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+.hamburgerBtn,
+.mobileNav {
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.hamburger {
+  justify-content: space-between;
+  flex-direction: column;
+  display: inline-flex;
+  height: 16px;
+  width: 16px;
+  margin-right: 8px;
+  margin-top: -2px;
+  vertical-align: middle;
+
+  &::after,
+  &::before {
+    display: block;
+    content: '';
+    height: 2px;
+    background: #777;
+    transition: transform 400ms, filter 400ms;
+    transform-origin: 50% 50%;
+    width: 100%;
+  }
+
+  &::before {
+    filter: drop-shadow(0 7px 0 #777);
+  }
+
+  .isOpen & {
+    &::before {
+      filter: drop-shadow(0 14px 0 rgba(#fff, 0));
+      transform: translateY(7px) rotate(225deg);
+    }
+
+    &::after {
+      transform: translateY(-7px) rotate(-225deg);
+    }
+  }
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leftWrap {
+  position: relative;
+}
+
+.logo {
+  width: 90px;
+  @media (min-width: 370px) {
+    width: 120px;
+  }
+}
+
+.countdown {
+  bottom: -5px;
+  font-size: 9px;
+  opacity: 0.7;
+  position: absolute;
+  left: 0;
+  white-space: nowrap;
+
+  @media (min-width: 370px) {
+    font-size: 11px;
+    bottom: -8px;
+    left: auto;
+    right: 0;
+  }
+}
+
+.links {
+  a {
+    display: inline-block;
+    background-image: linear-gradient(0deg, #555, #555);
+    background-position: 0 calc(2em + 4px);
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    color: $color-dark;
+    margin-left: 1.5em;
+    padding: 1em 0;
+    transition: background-size 250ms, background-position 250ms;
+    text-decoration: none;
+    text-shadow: 1px 1px #fff, -1px 1px #fff, 0 -1px #fff;
+
+    @media (max-width: 510px) {
+      font-size: 0.9em;
+      margin-left: 0.7em;
+      padding: 0.8em 0;
+    }
+  }
+
+  a:not(.active) {
+    background-size: 0 1px;
+    background-position-x: 50%;
+    opacity: 0.5;
+  }
+
+  a.active {
+    cursor: default;
+  }
+}
+
+.links a:last-child::first-letter,
+.politics::first-letter {
+  text-transform: uppercase;
+}
+
+@media (max-width: 510px) {
+  .politicsPrefix {
+    display: none;
+  }
+}
+
+.countdown {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
