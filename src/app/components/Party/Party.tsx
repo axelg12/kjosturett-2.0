@@ -1,8 +1,9 @@
 import React from 'react';
 import cx from 'classnames';
 import s from './Party.module.scss';
-// import { getAssetUrl } from '../../utils';
 import Link from 'next/link';
+import { getAssetUrl } from '@/utils/utils';
+import Image from 'next/image';
 
 interface Props {
   url: string;
@@ -24,7 +25,7 @@ const Party = ({ url, href, onClick, isSelected, isFaded, letter, name, leader }
       className={cx(s.party, isSelected && s.isSelected, isFaded && s.isFaded)}
     >
       <span className={s.imgWrap}>
-        <img src={''} className={s.image} alt={`${name}'s logo`} />
+        <Image src={getAssetUrl('party-icons', url)} className={s.image} alt={`${name}'s logo`} />
       </span>
       <span className={s.info}>
         <h3 className={s.name}>{name}</h3>

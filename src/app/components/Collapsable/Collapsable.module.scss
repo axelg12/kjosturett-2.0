@@ -3,6 +3,10 @@
 
 .root {
   width: 100%;
+  li {
+    margin-left: 22px;
+  }
+  
 }
 
 .category {
@@ -93,8 +97,4 @@
   a {
     color: $color-dark;
   }
-}
-
-li {
-  margin-left: 22px;
 }

@@ -1,0 +1,34 @@
+@import '../../components/functions.scss';
+
+.root {
+  align-items: center;
+  display: flex;
+}
+
+.imgWrap {
+  border-radius: 50%;
+  overflow: hidden;
+
+  @include between-property('height', 64px, 42px, 1200px, 0);
+  @include between-property('width', 64px, 42px, 1200px, 0);
+}
+
+.img {
+  height: auto;
+  width: 100%;
+}
+
+.content {
+  color: #5b5b5b;
+  padding-left: 1em;
+}
+
+.leader {
+  font-size: 1.05em;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.leaderTitle {
+  font-size: 0.8em;
+}

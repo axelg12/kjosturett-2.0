@@ -1,13 +1,16 @@
+'use client';
+
 import React, { MouseEventHandler, useState } from 'react';
 import cx from 'classnames';
 // import history from '../../history';
 import styles from './Collapsable.module.scss';
+import Image from 'next/image';
 
 interface item {
   key: string;
   title: string;
   content: string;
-  image: string;
+  image?: string;
 }
 
 interface Props {
@@ -55,7 +58,7 @@ const Collapsable = ({ items }: Props) => {
       {items.map(({ key, title, content, image }) => (
         <div className={styles.category} key={key}>
           <a href={`#${key}`} className={styles.header} onClick={toggle(key)}>
-            {image && <img className={styles.image} src={image} />}
+            {image && <Image className={styles.image} src={image} alt={''} fill={true} />}
             <h3 className={styles.title}>{title}</h3>
             <i aria-hidden="true" className={cx(styles.icon, !open[key] && styles.isOpen)} />
           </a>
