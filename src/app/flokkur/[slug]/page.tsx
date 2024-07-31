@@ -15,17 +15,10 @@ const PartySingle = ({ params }: { params: { slug: string } }) => {
   } catch (e) {
     console.error(e);
   }
-  console.log('categories', categories);
   return (
     <div className={s.root}>
       <div className={s.header}>
         <PartyProfile {...party} />
-        <Image
-          fill={true}
-          className={s.logo}
-          src={getAssetUrl('party-icons', party.url)}
-          alt="Logo"
-        />
       </div>
       <div className={s.topics}>
         <Collapsable

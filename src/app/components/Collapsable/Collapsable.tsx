@@ -2,7 +2,6 @@
 
 import React, { MouseEventHandler, useState } from 'react';
 import cx from 'classnames';
-// import history from '../../history';
 import styles from './Collapsable.module.scss';
 import Image from 'next/image';
 

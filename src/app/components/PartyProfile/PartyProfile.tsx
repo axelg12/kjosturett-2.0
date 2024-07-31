@@ -9,8 +9,9 @@ const Container = ({ name, leader, leaderTitle, url }: Party) => (
     <div className={styles.imgWrap}>
       <Image
         className={styles.img}
-        src={getAssetUrl('formenn', url)}
+        src={getAssetUrl('party-icons', url)}
         fill={true}
+        style={{ objectFit: 'contain' }}
         alt={`${name}'s ${leaderTitle}: ${leader}`}
       />
     </div>

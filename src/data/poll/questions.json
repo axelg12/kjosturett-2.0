@@ -1,0 +1,106 @@
+[
+  {
+    "question": "Ég myndi vilja búa í útlöndum ",
+    "id": 1
+  },
+  {
+    "question": "Ég forðast eins og heitan eldinn að fara í IKEA ",
+    "id": 2
+  },
+  {
+    "question": "Ég myndi kaupa flugmiða með tveggja daga fyrirvara",
+    "id": 3
+  },
+  {
+    "question": "Ég er skipulögð/skipulagður",
+    "id": 4
+  },
+  {
+    "question": "Ég elska plöntur",
+    "id": 5
+  },
+  {
+    "question": "Hvítvín er gott",
+    "id": 6
+  },
+  {
+    "question": "Mér finnst gaman að synda",
+    "id": 7
+  },
+  {
+    "question": "Heima er best",
+    "id": 8
+  },
+  {
+    "question": "Ég vil eiga hund",
+    "id": 9
+  },
+  {
+    "question": "Ég vil vera í kór",
+    "id": 10
+  },
+  {
+    "question": "Mér finnst hnetusmjör gott",
+    "id": 11
+  },
+  {
+    "question": "Ég væri til í að fara í svifflug",
+    "id": 12
+  },
+  {
+    "question": "Ég mæti ávallt á réttum tíma",
+    "id": 13
+  },
+  {
+    "question": "Ég hlakka til að fara að sofa á kvöldin",
+    "id": 14
+  },
+  {
+    "question": "Mér finnst gaman að fara í langa hjólatúra",
+    "id": 15
+  },
+  {
+    "question": "Mér finnst gaman að sofa í tjaldi",
+    "id": 16
+  },
+  {
+    "question": "Ég er ævintýragjörn/gjarn",
+    "id": 17
+  },
+  {
+    "question": "Á Spáni get ég spjallað við infædda",
+    "id": 18
+  },
+  {
+    "question": "Ég myndi vilja búa í 19. aldar Bretlandi",
+    "id": 19
+  },
+  {
+    "question": "Ef ég gæti myndi ég vilja búa á bóndabæ",
+    "id": 20
+  },
+  {
+    "question": "Mér finnst gaman að baka",
+    "id": 21
+  },
+  {
+    "question": "Ég væri til í að eiga húsbíl",
+    "id": 22
+  },
+  {
+    "question": "Mér finnst gaman að hreinsa frá niðurfalli",
+    "id": 23
+  },
+  {
+    "question": "Ég tek mér minn tíma í að hafa mig fínt til",
+    "id": 24
+  },
+  {
+    "question": "Mér finnst gaman að kaupa mér föt",
+    "id": 25
+  },
+  {
+    "question": "Mér finnst notalegt að vera vakin(n) með kaffi",
+    "id": 26
+  }
+]

@@ -24,9 +24,14 @@ const Party = ({ url, href, onClick, isSelected, isFaded, letter, name, leader }
       onClick={onClick}
       className={cx(s.party, isSelected && s.isSelected, isFaded && s.isFaded)}
     >
-      <span className={s.imgWrap}>
-        <Image src={getAssetUrl('party-icons', url)} className={s.image} alt={`${name}'s logo`} />
-      </span>
+      <div className={s.imgWrap}>
+        <Image
+          src={getAssetUrl('party-icons', url)}
+          fill={true}
+          className={s.image}
+          alt={`${name}'s logo`}
+        />
+      </div>
       <span className={s.info}>
         <h3 className={s.name}>{name}</h3>
         <p className={s.leader}>{leader}</p>

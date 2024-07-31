@@ -94,7 +94,7 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb)); */
   background-color: rgb(var(--foreground-rgb));
 }
 
