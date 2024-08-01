@@ -74,6 +74,8 @@
 .imgWrap {
   margin-right: 0.5rem;
   width: 2rem;
+  height: 65px;
+  position: relative;
 }
 
 .image {
@@ -94,11 +96,13 @@
     margin-left: 0.5rem;
     text-align: center;
     width: calc(40% - 0.5rem);
+    height: 200px;
   }
 
   .image {
     height: auto;
-    max-height: 100px;
-    max-width: 100px;
+    max-height: 70px;
+    max-width: 70px;
+    align-self: center;
   }
 }
