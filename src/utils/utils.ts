@@ -11,3 +11,11 @@ export const encodeAnswersToken = (answers: string[]) => {
 
   return `${first}:${second}:${third}`;
 };
+
+export const decodeAnswersToken = (token: string) => {
+  const decode = (part: string) => parseInt(part, 36).toString().split('');
+  return token
+    .split(':')
+    .map(decode)
+    .reduce((a, b) => a.concat(b), []);
+};

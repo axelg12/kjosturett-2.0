@@ -5,6 +5,7 @@ import cx from 'classnames';
 import Slider from 'rc-slider';
 import s from './KosningaProf.module.scss';
 import { encodeAnswersToken } from '@/utils/utils';
+import { useRouter } from 'next/navigation';
 
 const answersKey = 'prof:answers';
 const indexKey = 'prof:answers:index';
@@ -49,6 +50,7 @@ const Kosningaprof = ({ questions, isEmbedded }: Props) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(-1);
   const [showReset, setShowReset] = useState(false);
   const [visible, setVisible] = useState({});
+  const router = useRouter();
   // constructor(props) {
 
   //   this.positions = {};
@@ -108,9 +110,8 @@ const Kosningaprof = ({ questions, isEmbedded }: Props) => {
     //     }),
     //   })
     //   .catch(console.error);
-    const segments = [isEmbedded && 'embed', 'kosningaprof', answersToken];
-    const path = segments.filter(Boolean).join('/');
-    // history.push(`/${path}`);
+    const path = ['kosningaprof', answersToken].join('/');
+    router.push(`/${path}`);
   };
 
   const saveState = () => {
@@ -161,16 +162,17 @@ const Kosningaprof = ({ questions, isEmbedded }: Props) => {
             width: 18,
             height: 18,
           }}
-          handleStyle={{
-            backgroundColor: '#333',
-            borderColor: '#999',
-            marginLeft: 4,
-            marginTop: -7,
-            width: 18,
-            height: 18,
-          }}
-          trackStyle={{
-            backgroundColor: 'transparent',
+          styles={{
+            track: {
+              backgroundColor: 'transparent',
+            },
+            handle: {
+              backgroundColor: '#333',
+              borderColor: '#999',
+              marginTop: -7,
+              width: 18,
+              height: 18,
+            },
           }}
         />
         <div className={s.questionControls}>

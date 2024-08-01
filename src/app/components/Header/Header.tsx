@@ -44,14 +44,15 @@ const Header = ({ page }: Props) => {
       >
         Kosningapróf
       </Link>,
-      <Link
-        onClick={() => setIsOpen(false)}
-        href="/flokkar/bera-saman"
-        key="/flokkar/bera-saman"
-        className={cx(page === 'bera-saman' ? s.active : null)}
-      >
-        Samanburður
-      </Link>,
+      // TODO
+      // <Link
+      //   onClick={() => setIsOpen(false)}
+      //   href="/flokkar/bera-saman"
+      //   key="/flokkar/bera-saman"
+      //   className={cx(page === 'bera-saman' ? s.active : null)}
+      // >
+      //   Samanburður
+      // </Link>,
     ];
   };
 
