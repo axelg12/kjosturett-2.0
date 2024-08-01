@@ -4,6 +4,7 @@ import React, { MouseEventHandler, useState } from 'react';
 import cx from 'classnames';
 import styles from './Collapsable.module.scss';
 import Image from 'next/image';
+import { CCollapse } from '@coreui/react';
 
 interface item {
   key: string;
@@ -21,10 +22,6 @@ interface Open {
 }
 
 const Collapsable = ({ items }: Props) => {
-  const spring = {
-    stiffness: 200,
-    damping: 20,
-  };
   const [open, setOpen] = useState<Open>({});
   const scrollTo = (target: HTMLElement) => {
     let curtop = 0;
@@ -61,8 +58,7 @@ const Collapsable = ({ items }: Props) => {
             <h3 className={styles.title}>{title}</h3>
             <i aria-hidden="true" className={cx(styles.icon, !open[key] && styles.isOpen)} />
           </a>
-          {/* <div isOpened={open[key] === true} springConfig={spring}> */}
-          <div>
+          <CCollapse visible={open[key] === true}>
             <div
               dangerouslySetInnerHTML={{
                 __html: content,
@@ -72,7 +68,7 @@ const Collapsable = ({ items }: Props) => {
                 // category.statement === '' ? s.textNoReply : null
               )}
             />
-          </div>
+          </CCollapse>
         </div>
       ))}
     </div>

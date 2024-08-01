@@ -7,6 +7,8 @@ import Link from 'next/link';
 import { getAssetUrl } from '@/utils/utils';
 import Image from 'next/image';
 import { AnswerMap, PartyReplyWithScore, PartyReplyWithScoreSplit } from '@/types/types';
+import { CCollapse } from '@coreui/react';
+import '@coreui/coreui/dist/css/coreui.min.css';
 
 const scoreToFloatingPoint = (score: number, scalar = 1) =>
   Math.max(1, Math.ceil(score / scalar)) / 100;
@@ -146,67 +148,63 @@ const KosningaprofResults = ({
               <div className={s.partyName}>{party.name}</div>
               <div className={s.partyPercentage}>{Math.ceil(party.score)}%</div>
             </div>
-            {/* <Collapse
-              isOpened={open[party.letter] === true}
-              springConfig={{
-                stiffness: 100,
-                damping: 20,
-              }}
-            > */}
-            <div className={s.partyQuestions}>
-              {answeredQuestions
-                .map((question) => ({
-                  ...question,
-                  myAnswer: question.myAnswer || 3,
-                  partyAnswer: party.reply[question.id],
-                }))
-                .sort((a, b) => {
-                  const aAgree = Math.abs(a.myAnswer - a.partyAnswer);
-                  const bAgree = Math.abs(b.myAnswer - b.partyAnswer);
-                  if (a.myAnswer === 3 || a.myAnswer === 6) {
-                    return 1;
-                  }
-                  if (b.myAnswer === 3 || b.myAnswer === 6 || isNaN(aAgree) || isNaN(bAgree)) {
-                    return -1;
-                  }
-                  return aAgree - bAgree;
-                })
-                .map(({ id, myAnswer, question, partyAnswer }) => {
-                  const iAmIndiffrent = !(myAnswer !== 3 && myAnswer !== 6);
-                  const pluralParty = party.name === 'Píratar';
-                  const partyIndiffrent = !(partyAnswer !== 3 && partyAnswer !== 6);
-                  const difference = Math.abs(myAnswer - partyAnswer);
+            <CCollapse visible={open[party.letter] === true}>
+              <div className={s.partyQuestions}>
+                {answeredQuestions
+                  .map((question) => ({
+                    ...question,
+                    myAnswer: question.myAnswer || 3,
+                    partyAnswer: party.reply[question.id],
+                  }))
+                  .sort((a, b) => {
+                    const aAgree = Math.abs(a.myAnswer - a.partyAnswer);
+                    const bAgree = Math.abs(b.myAnswer - b.partyAnswer);
+                    if (a.myAnswer === 3 || a.myAnswer === 6) {
+                      return 1;
+                    }
+                    if (b.myAnswer === 3 || b.myAnswer === 6 || isNaN(aAgree) || isNaN(bAgree)) {
+                      return -1;
+                    }
+                    return aAgree - bAgree;
+                  })
+                  .map(({ id, myAnswer, question, partyAnswer }) => {
+                    const iAmIndiffrent = !(myAnswer !== 3 && myAnswer !== 6);
+                    const pluralParty = party.name === 'Píratar';
+                    const partyIndiffrent = !(partyAnswer !== 3 && partyAnswer !== 6);
+                    const difference = Math.abs(myAnswer - partyAnswer);
 
-                  return (
-                    <div className={s.partyQuestion} key={id}>
-                      <h4>
-                        <i className={cx(s.dot, !iAmIndiffrent && s[`dot${difference}`])} />
-                        {question}
-                      </h4>
+                    return (
+                      <div className={s.partyQuestion} key={id}>
+                        <h4>
+                          <i className={cx(s.dot, !iAmIndiffrent && s[`dot${difference}`])} />
+                          {question}
+                        </h4>
 
-                      {difference === 0 ? (
-                        <div>
-                          Bæði ég og {party.name} erum{' '}
-                          <strong>{answers.textMap[myAnswer].toLowerCase()}</strong>{' '}
-                          {iAmIndiffrent && 'gagnvart '} þessari staðhæfingu.
-                        </div>
-                      ) : (
-                        <div>
-                          Ég er{' '}
-                          <strong>{(answers.textMap[myAnswer] || 'hlutlaus').toLowerCase()}</strong>{' '}
-                          en {party.name} {pluralParty ? 'eru ' : 'er '}
-                          <strong>
-                            {(answers.textMap[partyAnswer] || 'hlutlaus').toLowerCase()}
-                            {(partyIndiffrent && pluralParty && 'ir ') || ' '}
-                          </strong>{' '}
-                          {partyIndiffrent && 'gagnvart '} þessari staðhæfingu.
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
-            </div>
-            {/* </Collapse> */}
+                        {difference === 0 ? (
+                          <div>
+                            Bæði ég og {party.name} erum{' '}
+                            <strong>{answers.textMap[myAnswer].toLowerCase()}</strong>{' '}
+                            {iAmIndiffrent && 'gagnvart '} þessari staðhæfingu.
+                          </div>
+                        ) : (
+                          <div>
+                            Ég er{' '}
+                            <strong>
+                              {(answers.textMap[myAnswer] || 'hlutlaus').toLowerCase()}
+                            </strong>{' '}
+                            en {party.name} {pluralParty ? 'eru ' : 'er '}
+                            <strong>
+                              {(answers.textMap[partyAnswer] || 'hlutlaus').toLowerCase()}
+                              {(partyIndiffrent && pluralParty && 'ir ') || ' '}
+                            </strong>{' '}
+                            {partyIndiffrent && 'gagnvart '} þessari staðhæfingu.
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+              </div>
+            </CCollapse>
           </div>
         ))}
     </div>

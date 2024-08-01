@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@coreui/coreui": "^5.1.0",
+    "@coreui/react": "^5.2.0",
     "classnames": "^2.5.1",
     "next": "14.2.5",
     "rc-slider": "^11.1.5",
