@@ -1,6 +1,7 @@
 'use client';
 
-import React, { MouseEventHandler, useState } from 'react';
+import '@coreui/coreui/dist/css/coreui.min.css';
+import React, { useState } from 'react';
 import cx from 'classnames';
 import styles from './Collapsable.module.scss';
 import Image from 'next/image';
@@ -48,7 +49,7 @@ const Collapsable = ({ items }: Props) => {
     // location.href = location.href.replace(location.hash,location.hash.substr(1))
     // }
   };
-
+  console.log('here', open);
   return (
     <div className={styles.root}>
       {items.map(({ key, title, content, image }) => (

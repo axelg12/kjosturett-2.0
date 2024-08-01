@@ -64,9 +64,10 @@ const KosningaprofResults = ({
     return (
       <div>
         <p className={s.lead}>
-          Niðurstöður úr kosningaprófi <strong>Kjóstu rétt</strong>. Þú getur lesið{' '}
+          Niðurstöður úr kosningaprófi <strong>Kjóstu rétt</strong>.
+          {/* Þú getur lesið{' '}
           {renderLink('/malefni/atvinnumal', 'stefnumál flokkana')} í þeim málefnum sem þér þykir
-          mikilvæg.
+          mikilvæg. */}
         </p>
 
         <p className={s.buttons}>
